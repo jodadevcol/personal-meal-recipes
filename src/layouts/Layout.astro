@@ -20,9 +20,14 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<div>
-			<main>
-				<slot />
-			</main>
+			<!-- <div
+      class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right, bg-sky-200,transparent_1px),linear-gradient(to_bottom, bg-sky-200,transparent_1px)] bg-[size:6rem_4rem]"
+    >
+      <div
+        class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#c5e3f2,transparent)]"
+      ></div>
+    </div> -->
+			<slot />
 		</div>
 	</body>
 </html>
@@ -31,15 +36,32 @@ const { title } = Astro.props;
 <style is:global>
 
 	html {
-		background: #13151a;
-		color: #fff;
+		@apply bg-white
 	}
 
 	body {
-		@apply grid place-items-center px-10 lg:px-20;
+		@apply grid place-items-center px-10 lg:px-20 bg-gradient-to-br from-sky-100 to-white text-primary;
 	} 
 
 	body > div {
-		@apply w-full max-w-screen-xl h-screen;
+		@apply relative w-full max-w-screen-xl min-h-screen ;
 	}
+
+	.content-recipe {
+    & > h2 {
+      @apply text-3xl font-bold mb-6 text-skyblue-800;
+    }
+
+    & > ol {
+      @apply space-y-4 flex flex-col;
+
+      & > li {
+        @apply relative inline-flex gap-x-4 items-start justify-start;
+
+        &::before {
+          @apply content-[''] size-6 bg-skyblue-800 text-white text-base rounded-full;
+        }
+      }
+    }
+  }
 </style>
