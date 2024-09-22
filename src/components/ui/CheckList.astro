@@ -1,0 +1,16 @@
+---
+interface Props {
+	name: string
+}
+
+const {name} = Astro.props
+---
+
+<div class="relative ">
+	<div class="flex items-center justify-start gap-x-3 text-primary">
+		<input type="checkbox" class="peer absolute inset-0 appearance-none cursor-pointer" />
+
+		<span class="block size-4 outline outline-2 outline-skyblue-700 rounded peer-hover:bg-skyblue-200 peer-checked:bg-skyblue-700 "></span>
+		<span>{name}</span>
+	</div>
+</div>
