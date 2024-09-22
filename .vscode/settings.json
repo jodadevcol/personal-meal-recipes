@@ -1,0 +1,23 @@
+{
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"prettier.documentSelectors": [
+		"**/*.astro"
+	],
+	"tailwindCSS.classAttributes": [
+		"class",
+		"className",
+		"ngClass",
+		"class:list",
+		"colClass"
+	],
+	"[astro]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "never"
+		}
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}
